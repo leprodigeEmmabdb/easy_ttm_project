@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+    {{ $project->name }}
+@endsection
 @section('content')
     <div class="card card-primary card-outline">
         <div class="card-header">
@@ -103,15 +105,8 @@
                                 </ul>
                                 <div class="text-center mt-5 mb-3 row">
                                     <div class=" col-lg-5 nav-item dropdown">
-                                        <a class=" btn btn-sm btn-primary nav-link  dropdown-toggle" data-toggle="dropdown"
-                                            href="#" role="button" aria-haspopup="true"
-                                            aria-expanded="flase">Membres</a>
-                                        <div class="dropdown-menu mt-0" style="left: 0px; right: inherit;">
-                                            <a class="dropdown-item" href="{{ route('membres.index', $project->id) }}"
-                                                data-widget="iframe-close" data-type="all">Voir</a>
-                                            <a class="dropdown-item" href="{{ route('membres.create', $project->id) }}"
-                                                data-widget="iframe-close" data-type="all">Ajouter</a>
-                                        </div>
+                                        <a class=" btn btn-sm btn-primary nav-link"
+                                            href="{{ route('membres.index', $project->id) }}">Membres</a>
                                     </div>
                                 </div>
                             </div>

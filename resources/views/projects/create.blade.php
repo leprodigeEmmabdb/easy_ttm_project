@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Création
+@endsection
 
 @section('content')
     <form action="{{ route('projects.store') }}" method="post" enctype="multipart/form-data">
