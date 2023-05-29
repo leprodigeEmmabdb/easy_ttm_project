@@ -69,6 +69,9 @@
                                 </td>
                             </tr>
                         @empty
+                        <tr class="col-lg-12  text-center text-black-50 h5">
+                            <td colspan="6">Aucun projet</td>
+                        </tr>
                         @endforelse
                     </thead>
                 </table>

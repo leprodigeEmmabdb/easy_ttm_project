@@ -16,6 +16,12 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ route('demande.index') }}" class="nav-link {{ Request::is('tasks') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-book"></i>
+        <p>Livrables</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('optionsttm.index') }}" class="nav-link {{ Request::is('optionsttm') ? 'active' : '' }}">
         <i class="nav-icon fas fa-columns"></i>
         <p>Option Ttm</p>
