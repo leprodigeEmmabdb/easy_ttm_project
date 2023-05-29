@@ -18,6 +18,11 @@
                         aria-selected="true">Détails</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link " id="custom-content-below-task-tab" data-toggle="pill"
+                        href="#custom-content-below-task" role="tab" aria-controls="custom-content-below-task"
+                        aria-selected="false">Démandes</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill"
                         href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile"
                         aria-selected="false">Activités</a>
@@ -72,7 +77,7 @@
                                     </div>
                                     <div class="post clearfix">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg"
+                                            <img class="img-circle img-bordered-sm" src="{{Vite::asset('resources/images/logo.svg')}}" 
                                                 alt="User Image">
                                             <span class="username"><a href="#">{{ $project->projectOwner }}
                                                 </a></span>
@@ -114,10 +119,15 @@
 
                     </div>
                 </div>
-                <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel"
-                    aria-labelledby="custom-content-below-profile-tab">
-                    <p class="text-center text-black-50 my-2"> Aucune activité pour l'instant</p>
+                <div class="tab-pane fade row" id="custom-content-below-task" role="tabpanel"aria-labelledby="custom-content-below-task-tab">
+                    <div class="row">
+                        @include('projects.claims.index')
+                    </div>
                 </div>
+                <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel"aria-labelledby="custom-content-below-profile-tab">
+                    pas dispo
+
+                </div> 
                 <div class="tab-pane fade" id="custom-content-below-settings" role="tabpanel"
                     aria-labelledby="custom-content-below-settings-tab">
                     <p class="text-center text-black-50 my-2"> N'est pas disponible</p>
@@ -125,4 +135,18 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+
+<script>
+    var tasks=document.querySelector('.tasks')  
+   function handleButtomClick(event){
+        event.preventDefault();
+        tasks.style.width="100px"
+        tasks.style.transition="all 2s"
+    console.log(tasks)
+   }
+
+    
+  </script>
 @endsection
