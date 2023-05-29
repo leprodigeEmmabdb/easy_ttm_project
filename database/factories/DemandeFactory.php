@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Demande>
+ */
+class DemandeFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'model' => 'model.pdf',
+            'description' => fake()->paragraph(),
+            'contributeur' => fake()->name(),
+            'delais' => fake()->numberBetween(0,10),
+            'status' => 'non soumis',
+        ];
+    }
+}
