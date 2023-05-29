@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ComplexityItem;
+use App\Models\User;
+use App\Models\Demande;
 use App\Models\Project;
 use App\Models\ProjectFile;
 use Illuminate\Http\Request;
+use App\Models\ComplexityItem;
 
 class ProjectController extends Controller
 {
     public function index(){
-        $project = Project::orderBy('id', 'desc')->paginate(10);
+        $project = Project::orderBy('id', 'desc')->paginate(5);
         return view('projects.index', compact('project'));
     }
 
@@ -19,8 +21,10 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
        // Récuperation des documents du projets
+       $users=User::all();
+       $demandes = Demande::orderBy('id', 'desc')->paginate(5);
         $file = ProjectFile::all()->where('project_id',$project->id);
-        return view('projects.single', compact('project','file'));
+        return view('projects.single', compact('project','file','demandes','users'));
     }
 
     //cette methode permet la rediction au formulaire de création projet
