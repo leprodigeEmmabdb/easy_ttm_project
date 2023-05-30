@@ -9,7 +9,7 @@
         <h4 class="modal-title">Créer une Demande</h4>
     @endsection
     @section('modal-content')
-        <form class="form-horizontal" action="{{ route('demande.store') }}" method="POST">
+        <form class="form-horizontal" action="{{ route('demande.store') }}" method="POST" enctype="multipart/form-data": >
             @csrf
             <div class="card-body">
                 <div class="col-xm-6">
