@@ -124,5 +124,12 @@ class ProjectController extends Controller
           
         return redirect()->route('projects.index');
     }
+    public function destroy(int $project)
+    {
+        $project = Project::findOrFail($project);
+        $project->delete();
+
+        return redirect()->back()->with('success', 'Point de complexité modifié avec succes');
+    }
     
 }

@@ -100,7 +100,7 @@
                                 <h5 class="mt-5 text-muted">Project files</h5>
                                 <ul class="list-unstyled">
                                     @forelse ($file as $item)
-                                        <li><a href="#" class="btn-link text-secondary"><i
+                                        <li><a href="{{ $item->filePath }}" download class="btn-link text-secondary"><i
                                                     class="far fa-fw fa-file-word"></i>{{ $item->filePath }}</a></li>
                                     @empty
                                         <li><a href="#" class="btn-link text-secondary"><i

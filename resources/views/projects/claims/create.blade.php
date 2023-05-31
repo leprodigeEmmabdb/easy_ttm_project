@@ -9,7 +9,7 @@
         <h4 class="modal-title">Déposer le Livrable</h4>
     @endsection
     @section('modal-content')
-        <form class="form-horizontal" action="#" method="POST">
+        <form class="form-horizontal" action="#" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-group">

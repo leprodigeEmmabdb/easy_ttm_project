@@ -65,7 +65,7 @@
                                             class="fas fa-folder"></i></a>
                                     <a class="btn btn-info btn-sm" href="{{ route('projects.edit', $item->id) }}"><i
                                             class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a>
+                                    <a class="btn btn-danger btn-sm" href="{{ route('projects.destroy', $item->id) }}" onclick="supprimer(event)" item="Voulez-vous supprimer le projet {{ $item->name }}" data-toggle="modal" data-target="#supprimer"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @empty
@@ -82,6 +82,10 @@
                     <li class="page-item m-2"><a class="page-link" href="{{ $project->nextPageUrl() }}">»</a></li>
                 </ul>
             </div>
+            @include('layouts.delete')
         </div>
     </section>
+@endsection
+@section('scripts')
+    <script src="{{ Vite::asset('resources/js/scripts.js') }}"></script>
 @endsection

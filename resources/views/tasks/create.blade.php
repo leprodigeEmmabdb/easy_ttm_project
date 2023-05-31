@@ -9,7 +9,7 @@
         <h4 class="modal-title">Créer une Demande</h4>
     @endsection
     @section('modal-content')
-        <form class="form-horizontal" action="{{ route('demande.store') }}" method="POST" enctype="multipart/form-data": >
+        <form class="form-horizontal" action="{{ route('demande.store') }}" method="POST" enctype="multipart/form-data" >
             @csrf
             <div class="card-body">
                 <div class="col-xm-6">
@@ -46,7 +46,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-form-label">Contributeur</label>
+                    <label for="inputEmail3" class="col-form-label">jalon</label>
                     <select class="form-control select2 col-sm-9" style="width: 100%;"
                         aria-placeholder="type de projet" name="jalon">
                         <option>T0</option>

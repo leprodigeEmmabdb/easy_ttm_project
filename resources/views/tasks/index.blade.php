@@ -48,7 +48,7 @@
                                     {{ $item->status }}
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-light btn-sm" href="#" onclick="handleButtomClick(event)"><i
+                                    <a class="btn btn-light btn-sm" href="{{route('demande.show',$item->id)}}"  data-toggle="modal" data-target="#single-modal"><i
                                             class="fas fa-eye"></i></a>
                                     <a class="btn btn-light btn-sm" data-toggle="modal" data-target="#edit_modal">
                                         <i class="fas fa-pencil-alt"></i></a>
